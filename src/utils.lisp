@@ -42,10 +42,10 @@
         pathname)))
 
 (defun dirp (path)
-  (find #\/ path))
+  (find (uiop:directory-exists-p path)))
 
-(defun upper-directory (&optional directory)
-  (elt (nth-value 1 (cl-ppcre:scan-to-strings "(.*/).+$" (namestring (or directory (uiop/os:getcwd))))) 0))
+(defun parrent-directory (&optional directory)
+  (uiop:pathname-parent-directory-pathname (or directory (uiop/os:getcwd))))
 
-(defun merge-with-dir (child parent)
-  (merge-pathnames child (pathname-as-directory parent)))
+(defun merge-with-dir (child parent-dir)
+  (merge-pathnames child (pathname-as-directory parent-dir)))
