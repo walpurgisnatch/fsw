@@ -4,7 +4,15 @@
    :fsw.utils)
   (:export :pwd
    :ls
-   :mkdir))
+   :mkdir
+   :rmdir
+   :cd
+   :ls-files
+   :ls-directories
+   :search-for
+   :rmfile
+   :exists
+   :exists-here))
 
 (in-package :fsw)
 
