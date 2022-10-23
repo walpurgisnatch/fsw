@@ -5,8 +5,8 @@
   :depends-on ("cl-ppcre"
                "cl-reexport")
   :components ((:module "src"
-                :components
                 :serial t
+                :components
                 ((:file "utils")
                  (:file "fsw"))))
   :description "")
